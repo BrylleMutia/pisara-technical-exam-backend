@@ -9,6 +9,9 @@
 ### Install dependencies (composer)
 > composer install
 
+### Setup .env file
+> cp .env.example .env
+
 ### Database
 I used XAMPP for my SQL database.
 You can download it [here](https://www.apachefriends.org/index.html).
