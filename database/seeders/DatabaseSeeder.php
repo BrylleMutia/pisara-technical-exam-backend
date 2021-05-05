@@ -7,6 +7,7 @@ use App\Models\Comment;
 use App\Models\Photo;
 use App\Models\Post;
 use App\Models\Todo;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,5 +24,6 @@ class DatabaseSeeder extends Seeder
         Album::factory()->count(10)->create();
         Photo::factory()->count(10)->create();
         Todo::factory()->count(10)->create();
+        User::factory()->count(10)->create();
     }
 }
