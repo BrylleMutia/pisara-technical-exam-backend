@@ -14,7 +14,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        $photos = Photo::all();
+        $photos = Photo::paginate(10);
         return response()->json($photos, 200);
     }
 

@@ -13,7 +13,7 @@ class fetchUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'fetch:users {limit=100}';
+    protected $signature = 'fetch:users {limit=10}';
 
     /**
      * The console command description.

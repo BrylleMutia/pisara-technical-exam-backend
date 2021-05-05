@@ -45,3 +45,7 @@ To fetch the data from JSONplaceholder, you can run the following commands:
 
 *NOTE:*
 Limits are optional, and the default value is 100.
+
+
+## Client
+[Pisara Technical Exam (Frontend)](https://github.com/BrylleMutia/pisara-technical-exam-frontend)
