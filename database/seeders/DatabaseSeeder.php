@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Album;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         Post::factory()->count(10)->create();
         Comment::factory()->count(10)->create();
+        Album::factory()->count(10)->create();
     }
 }
