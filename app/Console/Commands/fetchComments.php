@@ -2,25 +2,25 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
-class fetchPosts extends Command
+class fetchComments extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'fetch:posts {limit=100}';
+    protected $signature = 'fetch:comments {limit=100}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Fetch posts from JSON placeholder, then create/update entries to corresponding table.';
+    protected $description = 'Fetch comments from JSON placeholder, then create/update entries to corresponding table.';
 
     /**
      * Create a new command instance.
@@ -40,14 +40,14 @@ class fetchPosts extends Command
     public function handle()
     {
         $limit = $this->argument('limit');
-        $response = Http::get('https://jsonplaceholder.typicode.com/posts?_limit=' . $limit);
+        $response = Http::get('https://jsonplaceholder.typicode.com/comments?_limit=' . $limit);
 
         if ($response->ok()) {
-            foreach ($response->json() as $post) {
-                Post::updateOrCreate(['id' => $post['id']], $post);
+            foreach ($response->json() as $comment) {
+                Comment::updateOrCreate(['id' => $comment['id']], $comment);
             }
 
-            $this->info('Successfully fetched ' . $limit . ' posts. Data updated.');
+            $this->info('Successfully fetched ' . $limit . ' comments. Data updated.');
         } else {
             $this->error('Something went wrong...');
         }
